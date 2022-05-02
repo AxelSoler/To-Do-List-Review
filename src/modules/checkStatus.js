@@ -1,12 +1,12 @@
-export default function checkStatus(box, desc, obj, array) {
+export default function checkStatus(box, description, object, array) {
   box.addEventListener('change', () => {
     if (box.checked) {
-      desc.classList.add('check');
-      obj.completed = true;
+      description.classList.add('check');
+      object.completed = true;
       localStorage.setItem('taskList', JSON.stringify(array));
     } else {
-      desc.classList.remove('check');
-      obj.completed = false;
+      description.classList.remove('check');
+      object.completed = false;
       localStorage.setItem('taskList', JSON.stringify(array));
     }
   });

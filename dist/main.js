@@ -135,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ checkStatus)\n/* harmony export */ });\nfunction checkStatus(box, desc, obj, array) {\n  box.addEventListener('change', () => {\n    if (box.checked) {\n      desc.classList.add('check');\n      obj.completed = true;\n      localStorage.setItem('taskList', JSON.stringify(array));\n    } else {\n      desc.classList.remove('check');\n      obj.completed = false;\n      localStorage.setItem('taskList', JSON.stringify(array));\n    }\n  });\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/checkStatus.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ checkStatus)\n/* harmony export */ });\nfunction checkStatus(box, description, object, array) {\n  box.addEventListener('change', () => {\n    if (box.checked) {\n      description.classList.add('check');\n      object.completed = true;\n      localStorage.setItem('taskList', JSON.stringify(array));\n    } else {\n      description.classList.remove('check');\n      object.completed = false;\n      localStorage.setItem('taskList', JSON.stringify(array));\n    }\n  });\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/checkStatus.js?");
 
 /***/ }),
 
@@ -155,7 +155,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ deleteTask)\n/* harmony export */ });\nfunction deleteTask(liElement, array) {\n  const number = liElement.dataset.index;\n  array.splice(number - 1, 1);\n  for (let i = number - 1; i < array.length; i += 1) {\n    array[i].index -= 1;\n  }\n  liElement.remove();\n  const indElements = document.querySelectorAll('.index');\n  indElements.forEach((element) => {\n    if (element.dataset.index >= number) {\n      element.dataset.index -= 1;\n    }\n  });\n  localStorage.setItem('taskList', JSON.stringify(array));\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/deleteFunction.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ deleteTask)\n/* harmony export */ });\nfunction deleteTask(list, array) {\n  const number = list.dataset.index;\n  array.splice(number - 1, 1);\n  for (let i = number - 1; i < array.length; i += 1) {\n    array[i].index -= 1;\n  }\n  list.remove();\n  const indexElements = document.querySelectorAll('.index');\n  indexElements.forEach((element) => {\n    if (element.dataset.index >= number) {\n      element.dataset.index -= 1;\n    }\n  });\n  localStorage.setItem('taskList', JSON.stringify(array));\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/deleteFunction.js?");
 
 /***/ }),
 
@@ -165,7 +165,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ editTask)\n/* harmony export */ });\nfunction editTask(desc, liElement, div1, div2, obj, array) {\n  desc.onfocus = () => {\n    liElement.classList.toggle('editing');\n    div1.classList.add('none');\n    div2.classList.add('active');\n  };\n\n  desc.onblur = () => {\n    liElement.classList.toggle('editing');\n    obj.description = desc.value;\n    localStorage.setItem('taskList', JSON.stringify(array));\n    setTimeout(() => {\n      div1.classList.remove('none');\n      div2.classList.remove('active');\n    }, 100);\n  };\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/editFunction.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ editTask)\n/* harmony export */ });\nfunction editTask(content, list, menu1, menu2, object, array) {\n  content.onfocus = () => {\n    list.classList.toggle('editing');\n    menu1.classList.add('none');\n    menu2.classList.add('active');\n  };\n\n  content.onblur = () => {\n    list.classList.toggle('editing');\n    object.description = content.value;\n    localStorage.setItem('taskList', JSON.stringify(array));\n    setTimeout(() => {\n      menu1.classList.remove('none');\n      menu2.classList.remove('active');\n    }, 100);\n  };\n}\n\n//# sourceURL=webpack://to-do-list/./src/modules/editFunction.js?");
 
 /***/ })
 

@@ -10,20 +10,27 @@ let tasks = [];
 const list = document.getElementById('list');
 const container = document.createElement('div');
 container.classList.add('container');
-list.appendChild(container);
 const title = document.createElement('h2');
 title.innerHTML = "Today's To Do";
 const ulList = document.createElement('ul');
-container.appendChild(title);
+const addTaskDiv = document.createElement('div');
+addTaskDiv.classList.add('addTaskDiv');
 const addTask = document.createElement('input');
 addTask.type = 'text';
 addTask.classList.add('addTask');
 addTask.placeholder = 'Add to your list ...';
-container.appendChild(addTask);
-container.appendChild(ulList);
+const addBtn = document.createElement('button');
+addBtn.classList.add('addBtn');
+addBtn.innerText = `↵`;
 const clearBtn = document.createElement('button');
 clearBtn.innerHTML = 'Clear all completed';
+list.appendChild(container);
+container.appendChild(title);
+container.appendChild(addTaskDiv);
+container.appendChild(ulList);
 container.appendChild(clearBtn);
+addTaskDiv.appendChild(addTask);
+addTaskDiv.appendChild(addBtn);
 
 const display = (taskObj) => {
   const liTask = document.createElement('li');
@@ -91,6 +98,12 @@ window.addEventListener('load', () => {
 
 addTask.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
+    display(addToDo(tasks, addTask));
+  }
+});
+
+addBtn.addEventListener('click', (e) => {
+  if (addTask.value != '') {
     display(addToDo(tasks, addTask));
   }
 });

@@ -34,8 +34,20 @@ h2 {
   border-right: 0;
   border-bottom: 1px solid rgb(235, 231, 231);
   height: 48px;
+  width: 90%;
   padding-left: 24px;
   font-style: italic;
+}
+
+.addBtn {
+  width: 10%;
+  font-size: 24px;
+  background-color: rgb(235, 231, 231);;
+}
+
+.addTaskDiv {
+  display: flex;
+  flex-direction: row;
 }
 
 ul {

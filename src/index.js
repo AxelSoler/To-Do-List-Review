@@ -11,7 +11,7 @@ const list = document.getElementById('list');
 const container = document.createElement('div');
 container.classList.add('container');
 list.appendChild(container);
-const title = document.createElement('h1');
+const title = document.createElement('h2');
 title.innerHTML = "Today's To Do";
 const ulList = document.createElement('ul');
 container.appendChild(title);

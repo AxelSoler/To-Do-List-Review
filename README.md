@@ -2,10 +2,6 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## Live Demo
-
-[To-Do-List Link](https://axelsoler.github.io/To-Do-list/dist)
-
 ## Built With
 
 - Major languages: HTML, CSS, Javascript

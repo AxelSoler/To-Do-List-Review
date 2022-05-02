@@ -21,7 +21,7 @@ addTask.classList.add('addTask');
 addTask.placeholder = 'Add to your list ...';
 const addBtn = document.createElement('button');
 addBtn.classList.add('addBtn');
-addBtn.innerText = `↵`;
+addBtn.innerText = '↵';
 const clearBtn = document.createElement('button');
 clearBtn.innerHTML = 'Clear all completed';
 list.appendChild(container);
@@ -102,8 +102,8 @@ addTask.addEventListener('keypress', (e) => {
   }
 });
 
-addBtn.addEventListener('click', (e) => {
-  if (addTask.value != '') {
+addBtn.addEventListener('click', () => {
+  if (addTask.value !== '') {
     display(addToDo(tasks, addTask));
   }
 });
